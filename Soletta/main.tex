@@ -5,13 +5,21 @@
 \usepackage{relsize}
 \usepackage{graphicx}
 \usepackage{multimedia}
-
+\usepackage{soul}
 \mode<presentation>{ \usetheme{Singapore} }
 \title{ Palestra com nome engraçadinho pra chamar gente }
 \subtitle{ A construção do Caos }
 \author{ Tomaz Canabrava }
 
 \AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+
+\AtBeginSubsection[]
 {
    \begin{frame}
        \frametitle{Outline}
@@ -26,6 +34,8 @@
     \includegraphics[width=300px]{images/evolution}
 \end{frame}
 
+\section { Breve Histórico }
+\subsection{ Pré História }
 \begin{frame} \frametitle{Invenções Pré-históricas}
     \begin{itemize}
      \item Fogo
@@ -81,18 +91,18 @@
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
-            \item Transistores
-            \item Módulos de Fita
-            \item Cartões Perfurados
-            \item ``Super computadores''
-            \item Terminais burros
-            \item Fortran
+  \item Transistores
+  \item Módulos de Fita
+  \item Cartões Perfurados
+  \item ``Super computadores''
+  \item Terminais burros
+  \item Fortran
         \end{itemize}
         \column{0.5\textwidth}
-            \includegraphics[width=150px]{images/oraculo}
+  \includegraphics[width=150px]{images/oraculo}
     \end{columns}
 \end{frame}
-
+\subsection { Idade das Trevas }
 \begin{frame} \frametitle{Fortran}
  \center{“I don't know what the language of the year 2000 will look like, but I know it will be called Fortran.”}
  \linebreak
@@ -130,6 +140,7 @@
      \includegraphics[width=300px]{images/the-internet}
 \end{frame}
 
+\subsection{Tempos Modernos}
 \begin{frame} \frametitle{A Internet}
      \begin{itemize}
       \item mIRC
@@ -153,11 +164,11 @@
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
-            \item Netscape Navigator
-            \item Internet Explorer
-            \item Opera
-            \item Chrome
-            \item Firefox
+  \item Netscape Navigator
+  \item Internet Explorer
+  \item Opera
+  \item Chrome
+  \item Firefox
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -176,8 +187,142 @@
     \includegraphics[width=300px]{images/browser-usage}
 \end{frame}
 
-\begin{frame} \frametitle{The Cloud}
+\subsection { Tempos Atuais }
+
+\begin{frame} \frametitle{The Cloud e IoT}
     \includegraphics[width=300px]{images/cloud-striffe}
 \end{frame}
+
+\section { É Tanta coisa... }
+
+\subsection{Tudo que temos que lidar}
+
+\begin{frame} \frametitle{Tudo junto e Misturado}
+ \begin{itemize}
+  \item Computadores
+  \item Celulares
+  \item Sensores
+  \item Dados
+  \item Musicas
+  \item Carros
+  \item Sites
+  \item Babás Eletrônicas
+ \end{itemize}
+\end{frame}
+
+\subsection{Linguagens que temos que trabalhar...}
+\begin{frame} \frametitle{Linguagens?}
+ \begin{itemize}
+  \item C
+  \item C++
+  \item Csharp
+  \item Java
+  \item Ruby
+  \item Python
+  \item JAVA
+  \item Javascript
+  \item SQL
+  \item noSQL
+ \end{itemize}
+\end{frame}
+
+\subsection{Tecnologias que temos que trabalhar}
+\begin{frame} \frametitle{Troca de Dados?}
+    \begin{itemize}
+     \item Corba
+     \item DBus
+     \item XML
+     \item JSON
+    \end{itemize}
+\end{frame}
+
+\subsection{Hardwares que vamos usar...}
+\begin{frame} \frametitle{Arquiteturas e Hardware?}
+    \includegraphics[width=300px]{images/over--9000}
+\end{frame}
+
+\begin{frame} \frametitle{Arquiteturas e Hardware?}
+
+a110x ad8232 adafruitms1438 adafruitss adc121c021 adis16448 adxl335 adxl345
+am2315 apds9002 at42qt1070 biss0001 bmpx8x buzzer cjq4435 ds1307 ecs1030
+enc03r flex gas gp2y0a grove grovecircularled grovecollision groveehr groveeldriver
+groveelectromagnet groveemg grovegsr grovelinefinder groveloudness grovemd
+grovemoisture groveo2 grovescam grovespeaker grovevdiv grovewater grovewfs
+guvas12d h3lis331dl hcsr04 hm11 hmc5883l hmtrp hp20x ht9170 htu21d hx711 ina132
+isd1820 itg3200 joystick12 l298 lcd ldt0028 lol lpd8806 lsm303 m24lr64e max31723
+max31855 max44000 max5487 maxds3231m maxsonarez mhz16 mic mlx90614 mma7455 mma7660
+mpl3115a2 mpr121 mpu9150 mq303a my9221 nrf24l01 nrf8001 nunchuck otp538u
+pca9685 ppd42ns pulsensor rfr359f rgbringcoder rotaryencoder rpr220 servo si114x
+sm130 st7735 stepmotor sx6119 ta12200 tcs3414cs th02 tm1637 tsl2561 ttp223 ublox6
+
+\end{frame}
+
+\section{ Entendendo o problema }
+
+\subsection{ Arquitetura}
+
+\begin{frame} \frametitle{Arquiteturas}
+    \begin{itemize}
+    \item Tamanho de um char?
+    \pause
+    \linebreak
+    \item 32
+    \item 16
+    \item 8
+    \pause
+    \linebreak
+    \item \textbf{14}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Medo no coração dos Fracos}
+    \begin{lstlisting}[language=C]
+
+static int field_mask = 0x7 << 10 |
+    0xF << 6 | 0xF << 2 | 0x3;
+
+int32_t raw_value;
+
+raw_value = (rx[0] << 24) | (rx[1] << 16) |
+    (rx[2] << 8) | rx[3];
+
+raw_value >>= (32 - valid_data);
+if (raw_value & (0x1 << valid_data)) {
+    raw_value|= ~field_mask;
+}
+
+    \end{lstlisting}
+\end{frame}
+
+\subsection{Sistemas Operacionais}
+
+\begin{frame} \frametitle{Sistemas Operacionais}
+ \begin{itemize}
+  \item Familia Windows
+  \item Familia Unix
+  \item Familia Linux
+  \item Sistemas Proprietários
+  \item Sistemas Embbed
+ \end{itemize}
+\end{frame}
+
+\subsection {Linguagens}
+
+\subsection{Linguagens que temos que trabalhar...}
+\begin{frame} \frametitle{Linguagens?}
+ \begin{itemize}
+  \item C
+  \item C++
+  \item \st{Csharp}
+  \item \st{Java}
+  \item \st{Ruby}
+  \item \st{Python}
+  \item \st{JAVA}
+  \item \st{Javascript}
+  \item \st{SQL}
+  \item \st{noSQL}
+ \end{itemize}
+\end{frame}
+
 
 \end{document}
