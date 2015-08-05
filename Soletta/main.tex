@@ -23,7 +23,7 @@
 {
    \begin{frame}
        \frametitle{Outline}
-       \tableofcontents[currentsection]
+       \tableofcontents[currentsection,currentsubsection]
    \end{frame}
 }
 
@@ -210,7 +210,23 @@
  \end{itemize}
 \end{frame}
 
+\begin{frame} \frametitle{ E Onde estamos }
+    \includegraphics[width=300px]{images/2015}
+\end{frame}
+
+\begin{frame} \frametitle{ Celulares }
+    \includegraphics[width=300px]{images/matrix}
+\end{frame}
+
+\begin{frame} \frametitle{ Carros }
+    \begin{columns}
+        \column{0.5\textwidth}
+        \includegraphics[width=150px]{images/nikola-tesla}
+     \end{columns}
+\end{frame}
+
 \subsection{Linguagens que temos que trabalhar...}
+
 \begin{frame} \frametitle{Linguagens?}
  \begin{itemize}
   \item C
@@ -221,9 +237,37 @@
   \item Python
   \item JAVA
   \item Javascript
-  \item SQL
-  \item noSQL
  \end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{ Linguagens Mágicas vs Linguagens Compiladas }
+    \framesubtitle { Não existe almoço grátis }
+ \begin{center}
+\begin{tabular}{ll}
+    c & 0.4 mib\\
+    c++ & 0.5 mib\\
+    fortran & 0.4 mib \\
+    java & 40 mib \\
+    python & 38 mib \\
+    ruby & 45 mib \\
+    javascript & 40 mib
+ \end{tabular}
+ \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{ Apressado come ponteiros }
+    \framesubtitle { temperados com suor e lágrimas }
+ \begin{center}
+\begin{tabular}{ll}
+    c & 0 ms\\
+    c++ & 0.1 ms\\
+    fortran & 0 ms \\
+    java & 4 ms \\
+    python & 20 ms \\
+    ruby & 30 ms \\
+    javascript & 20 ms
+ \end{tabular}
+ \end{center}
 \end{frame}
 
 \subsection{Tecnologias que temos que trabalhar}
@@ -236,7 +280,17 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame} \frametitle{Webservices?}
+ \begin{itemize}
+  \item ssh
+  \item HTTP API
+  \item FORM REQUESTS
+  \item RADATA
+ \end{itemize}
+\end{frame}
+
 \subsection{Hardwares que vamos usar...}
+
 \begin{frame} \frametitle{Arquiteturas e Hardware?}
     \includegraphics[width=300px]{images/over--9000}
 \end{frame}
@@ -257,9 +311,24 @@ sm130 st7735 stepmotor sx6119 ta12200 tcs3414cs th02 tm1637 tsl2561 ttp223 ublox
 
 \end{frame}
 
-\section{ Entendendo o problema }
+\begin{frame}
+ \begin{itemize}
+  \item Sensor de Luz
+  \item Giroscópio
+  \item Sensor de Queda
+  \item Sensor de Presença
+ \end{itemize}
+\end{frame}
 
-\subsection{ Arquitetura}
+\begin{frame} \frametitle{ Restrições de Hardware}
+  \begin{center}
+\begin{tabular}{ll}
+    Memória & 90kb até $ \infty $\\
+    Disco & 0b até $ \infty $\\
+    Processador & Iniciando em 100mhz
+ \end{tabular}
+ \end{center}
+\end{frame}
 
 \begin{frame} \frametitle{Arquiteturas}
     \begin{itemize}
@@ -281,10 +350,8 @@ sm130 st7735 stepmotor sx6119 ta12200 tcs3414cs th02 tm1637 tsl2561 ttp223 ublox
 static int field_mask = 0x7 << 10 |
     0xF << 6 | 0xF << 2 | 0x3;
 
-int32_t raw_value;
-
-raw_value = (rx[0] << 24) | (rx[1] << 16) |
-    (rx[2] << 8) | rx[3];
+int32_t raw_value = (rx[0] << 24) |
+    (rx[1] << 16) | (rx[2] << 8) | rx[3];
 
 raw_value >>= (32 - valid_data);
 if (raw_value & (0x1 << valid_data)) {
@@ -306,7 +373,7 @@ if (raw_value & (0x1 << valid_data)) {
  \end{itemize}
 \end{frame}
 
-\subsection {Linguagens}
+\section { Resolvendo o Problema }
 
 \subsection{Linguagens que temos que trabalhar...}
 \begin{frame} \frametitle{Linguagens?}
@@ -319,10 +386,142 @@ if (raw_value & (0x1 << valid_data)) {
   \item \st{Python}
   \item \st{JAVA}
   \item \st{Javascript}
-  \item \st{SQL}
-  \item \st{noSQL}
  \end{itemize}
 \end{frame}
 
+\begin{frame} \frametitle{ Problema do C }
+ Imagine controlar Diferentes hardwares
+
+ Ligados ou não na internet
+
+ Ligados ou não em um mesmo periférico
+
+ Em um programa C/C++
+\end{frame}
+
+\begin{frame} \frametitle{ IoTivity }
+    \includegraphics[width=300px]{images/iotivity2}
+\end{frame}
+
+\begin{frame} \frametitle { IoTivity }
+ \textbf{O que é?}
+\linebreak
+\linebreak
+ Framework em C/C++ para trabalhar com internet of things
+\linebreak
+\linebreak
+ \textbf{É de graça?}
+\linebreak
+\linebreak
+ Sim
+\linebreak
+\linebreak
+ \textbf{Devo Usar?}
+\linebreak
+\linebreak
+\pause
+ Veja bem...
+\end{frame}
+
+\begin{frame} \frametitle{ IoTivity }
+    \includegraphics[width=300px]{images/iotivity}
+\end{frame}
+
+\begin{frame} \frametitle{ IoTivity }
+    \includegraphics[width=300px]{images/raspy}
+\end{frame}
+
+\begin{frame} \frametitle{ Raspaberry - Py }
+    \textbf{O que é?}
+\linebreak
+\linebreak
+    Placa e framework para trabalhar com experimentação eletrônica.
+\linebreak
+\linebreak
+    \textbf{É de graça?}
+\linebreak
+\linebreak
+    Não, mas muito barato. (E ótimo presente pra crianças)
+\linebreak
+\linebreak
+    \textbf{Devo Usar?}
+\linebreak
+\linebreak
+    Deve.
+\linebreak
+\linebreak
+    \textbf{Ein?}
+    \pause
+\linebreak
+\linebreak
+    Não é tudo que eu não uso que falo mal.
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{ Raspaberry - Py}
+    \begin{lstlisting}[language=Python]
+
+import time
+import picamera
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+
+with picamera.PiCamera() as camera:
+    camera.start_preview()
+    GPIO.wait_for_edge(17, GPIO.FALLING)  # new
+    camera.capture('/home/pi/Desktop/image.jpg')
+    camera.stop_preview()
+
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame} \frametitle{ Soletta }
+        \includegraphics[width=300px]{images/soletta}
+\end{frame}
+
+\begin{frame} \frametitle{ Soletta }
+    \textbf{O que é?}
+\linebreak
+\linebreak
+    Um framework em C para trabalhar em auto nivel com devices e IoT
+\linebreak
+\linebreak
+    \textbf{É de graça?}
+\linebreak
+\linebreak
+    Sim, e Open Source.
+\linebreak
+\linebreak
+    \textbf{Devo Usar?}
+\linebreak
+\linebreak
+    Deve.
+\linebreak
+\linebreak
+    \textbf{Código, quero}
+\linebreak
+\linebreak
+    https://github.com/solettaproject/soletta
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{ Soletta }
+    \begin{lstlisting}
+        button(Button) CLICK -> PICTURE _(Camera:output="~/image.jpg")
+    \end{lstlisting}
+    \pause
+
+    Sim, sério.
+\end{frame}
+
+\begin{frame} \frametitle{Mas... Mas...}
+    Me deixem te responder com um Haiku
+
+    \begin{center}
+     (poesias compostas de três versos)
+    \end{center}
+
+    \includegraphics[width=300px]{images/haiku}
+\end{frame}
 
 \end{document}

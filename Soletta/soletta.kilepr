@@ -30,10 +30,10 @@ Mode=LaTeX
 
 [item:main.tex]
 archive=true
-column=0
+column=15
 encoding=UTF-8
 highlight=LaTeX
-line=28
+line=288
 mode=LaTeX
 open=true
 order=0
