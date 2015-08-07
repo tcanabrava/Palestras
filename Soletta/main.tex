@@ -399,6 +399,8 @@ if (raw_value & (0x1 << valid_data)) {
  Em um programa C/C++
 \end{frame}
 
+\subsection{IoTivity}
+
 \begin{frame} \frametitle{ IoTivity }
     \includegraphics[width=300px]{images/iotivity2}
 \end{frame}
@@ -406,18 +408,13 @@ if (raw_value & (0x1 << valid_data)) {
 \begin{frame} \frametitle { IoTivity }
  \textbf{O que é?}
 \linebreak
-\linebreak
  Framework em C/C++ para trabalhar com internet of things
-\linebreak
 \linebreak
  \textbf{É de graça?}
 \linebreak
-\linebreak
  Sim
 \linebreak
-\linebreak
  \textbf{Devo Usar?}
-\linebreak
 \linebreak
 \pause
  Veja bem...
@@ -431,28 +428,22 @@ if (raw_value & (0x1 << valid_data)) {
     \includegraphics[width=300px]{images/raspy}
 \end{frame}
 
+\subsection{Raspaberry Py}
 \begin{frame} \frametitle{ Raspaberry - Py }
     \textbf{O que é?}
 \linebreak
-\linebreak
     Placa e framework para trabalhar com experimentação eletrônica.
-\linebreak
 \linebreak
     \textbf{É de graça?}
 \linebreak
-\linebreak
     Não, mas muito barato. (E ótimo presente pra crianças)
-\linebreak
 \linebreak
     \textbf{Devo Usar?}
 \linebreak
-\linebreak
     Deve.
-\linebreak
 \linebreak
     \textbf{Ein?}
     \pause
-\linebreak
 \linebreak
     Não é tudo que eu não uso que falo mal.
 \end{frame}
@@ -476,38 +467,42 @@ with picamera.PiCamera() as camera:
     \end{lstlisting}
 \end{frame}
 
+\subsection{Soletta}
+
 \begin{frame} \frametitle{ Soletta }
         \includegraphics[width=300px]{images/soletta}
 \end{frame}
 
 \begin{frame} \frametitle{ Soletta }
+    \begin{center}
+    Desculpa a falta de logo,
+
+    tá faltando Designers no OpenSource.
+    \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{ Soletta }
     \textbf{O que é?}
-\linebreak
 \linebreak
     Um framework em C para trabalhar em auto nivel com devices e IoT
 \linebreak
-\linebreak
     \textbf{É de graça?}
-\linebreak
 \linebreak
     Sim, e Open Source.
 \linebreak
-\linebreak
     \textbf{Devo Usar?}
-\linebreak
 \linebreak
     Deve.
 \linebreak
-\linebreak
     \textbf{Código, quero}
-\linebreak
 \linebreak
     https://github.com/solettaproject/soletta
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{ Soletta }
     \begin{lstlisting}
-        button(Button) CLICK -> PICTURE _(Camera:output="~/image.jpg")
+        button(Button) CLICK ->
+            PICTURE _(Camera:output="~/image.jpg")
     \end{lstlisting}
     \pause
 
@@ -515,13 +510,16 @@ with picamera.PiCamera() as camera:
 \end{frame}
 
 \begin{frame} \frametitle{Mas... Mas...}
-    Me deixem te responder com um Haiku
-
-    \begin{center}
-     (poesias compostas de três versos)
-    \end{center}
-
     \includegraphics[width=300px]{images/haiku}
 \end{frame}
 
+\begin{frame} \frametitle{ Haiku }
+    \begin{center}
+        Um programador Programa
+
+        Arrastando coisas na tela
+
+        Apenas Ligando os módulos
+    \end{center}
+\end{frame}
 \end{document}

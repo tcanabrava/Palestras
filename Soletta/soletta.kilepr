@@ -4,8 +4,8 @@ bibliographyBackendUserOverride=
 def_graphic_ext=eps
 img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
-kile_livePreviewEnabled=true
-kile_livePreviewStatusUserSpecified=false
+kile_livePreviewEnabled=false
+kile_livePreviewStatusUserSpecified=true
 kile_livePreviewTool=LivePreview-PDFLaTeX
 kileprversion=2
 kileversion=2.9.60
@@ -30,10 +30,10 @@ Mode=LaTeX
 
 [item:main.tex]
 archive=true
-column=15
+column=40
 encoding=UTF-8
 highlight=LaTeX
-line=288
+line=479
 mode=LaTeX
 open=true
 order=0
