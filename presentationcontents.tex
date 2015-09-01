@@ -1,0 +1,21 @@
+% configures the presentations to use \section and \subsection as tableofcontents
+% in a way that it automatically creates lovely slides all over the place
+% correctly filling the CPEL approach needed by universities.
+
+\DeclareRobustCommand{\sectioncontents}[1]{
+	\AtBeginSection[] {
+		\begin{frame}
+			\frametitle{#1}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+}
+
+\DeclareRobustCommand{\subsectioncontents}[1]{
+	\AtBeginSubsection[]{
+		\begin{frame}
+			\frametitle{#1}
+			\tableofcontents[currentsection,currentsubsection]
+		\end{frame}
+	}
+}
